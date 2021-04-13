@@ -11,7 +11,7 @@ result = notes.map do |note|
   attributes = note.split("\n")
   attributes.delete("\r")
 
-  next if attributes.empty?
+  next if attributes.empty? || attributes.count < 3
 
   title     = attributes[0].strip.gsub("\xEF\xBB\xBF", '')
   text      = attributes[-1].strip
